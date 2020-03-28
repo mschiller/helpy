@@ -51,22 +51,3 @@ set :ssh_options, {
   user: fetch(:user),
   forward_agent: true,
 }
-
-#ssh_options[:forward_agent] = true
-
-set :whenever_roles, -> { [:app] }
-set :whenever_identifier, -> { "#{fetch(:application)}_#{fetch(:stage)}" }
-
-namespace :cache do
-  task :clear do
-    on roles(:app) do |host|
-      with rails_env: fetch(:rails_env) do
-        within current_path do
-          execute :bundle, :exec, "rails cache:clear"
-        end
-      end
-    end
-  end
-end
-
-after "deploy", "cache:clear"
