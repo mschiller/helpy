@@ -153,6 +153,9 @@ gem "recaptcha", '< 3', require: "recaptcha/rails" # TODO: Update
 
 gem 'best_in_place', '~> 3.1'
 
+# application configuration
+gem 'figaro'
+
 # Add onboarding component
 gem 'helpy_onboarding', git: 'https://github.com/helpyio/helpy_onboarding', branch: 'master'
 gem 'helpy_imap', git: 'https://github.com/helpyio/helpy_imap', branch: 'master'
@@ -187,6 +190,13 @@ group :development do
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 3.3'
+
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-yarn'
+  gem 'pry-rails'
+  gem 'pry-rescue'
 end
 
 group :test do

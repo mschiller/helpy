@@ -1,0 +1,16 @@
+app_name: ''
+
+development:
+  database_name: '_development'
+  database_username: ''
+  database_password: ''
+  secret_key_base: ''
+
+production:
+  database_name: '_production'
+  database_username: ''
+  database_password: ''
+  secret_key_base: ''
+
+git_respository: ''
+production_domain: ''

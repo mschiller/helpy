@@ -10,13 +10,17 @@ development:
   database: helpy_development
   port: 5432
   host: localhost
-
-test:
-  <<: *default
-  database: helpy_test
+  username: <%= Figaro.env.database_username %>
+  password: <%= Figaro.env.database_password %>
 
 production:
   <<: *default
   database: helpy_production
-  username: helpy
-  password: <%= ENV['helpy_DATABASE_PASSWORD'] %>
+  port: 5432
+  host: localhost
+  username: <%= Figaro.env.database_username %>
+  password: <%= Figaro.env.database_password %>
+
+test:
+  <<: *default
+  database: helpy_test
